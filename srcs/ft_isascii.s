@@ -15,4 +15,13 @@ global _ft_isascii
 section .text
 
 _ft_isascii:
+	cmp rdi, 0
+	jb nope
+	cmp rdi, 127
+	ja nope
+	mov rax, 1
+	ret
+
+nope:
+	mov rax, 0
 	ret

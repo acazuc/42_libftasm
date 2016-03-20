@@ -15,4 +15,13 @@ global _ft_isprint
 section .text
 
 _ft_isprint:
+	cmp rdi, 32
+	jb nope
+	cmp rdi, 127
+	jae nope
+	mov rax, 1
+	ret
+
+nope:
+	mov rax, 0
 	ret

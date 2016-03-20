@@ -21,7 +21,7 @@ _ft_isalpha:
 	ja nope
 	cmp rdi, 90
 	jbe yep
-	cmp rdi, 61
+	cmp rdi, 97
 	jae yep
 	jmp nope
 

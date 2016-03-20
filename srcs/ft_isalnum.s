@@ -15,4 +15,24 @@ global _ft_isalnum
 section .text
 
 _ft_isalnum:
+	cmp rdi, 48
+	jb nope
+	cmp rdi, 57
+	jbe yep
+	cmp rdi, 65
+	jb nope
+	cmp rdi, 90
+	jbe yep
+	cmp rdi, 97
+	jb nope
+	cmp rdi, 122
+	jbe yep
+	jmp nope
+
+yep:
+	mov rax, 1
+	ret
+
+nope:
+	mov rax, 0
 	ret
