@@ -1,0 +1,22 @@
+Parametres:
+	rdi, rsi, rdx, r10, r8, r9
+
+Syscalls:
+	move rax 0x20000004 (write)
+	;parameters
+	syscall
+
+Comparaison:
+	cmp r1, r2
+	signe:
+		ja: 1 > 2
+		jae: 1 >= 2
+		jb: 1 < 2
+		jbe: 1 <= 2
+	non signe:
+		jg: 1 > 2
+		jge: 1 >= 2
+		jl: 1 < 2
+		jle: 1 <= 2
+	je: 1 == 2
+	jne: 1 != 2
