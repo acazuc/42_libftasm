@@ -1,7 +1,7 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_strcat.s                                        :+:      :+:    :+:    ;
+;    ft_strlen.s                                        :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
@@ -10,28 +10,9 @@
 ;                                                                              ;
 ; **************************************************************************** ;
 
-global _ft_strcat
+global _ft_strlen
 
 section .text
 
-_ft_strcat:
-	mov rax, rdi
-
-pass_rdi:
-	cmp byte[rdi], 0
-	je append
-	add rdi, 1
-	jmp pass_rdi
-
-append:
-	cmp byte[rsi], 0
-	je end_prog
-	mov al, byte[rsi]
-	mov byte[rdi], al
-	add rdi, 1
-	add rsi, 1
-	jmp append
-
-end_prog:
-	mov byte[rdi], 0
+_ft_strlen:
 	ret

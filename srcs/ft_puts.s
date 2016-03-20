@@ -1,7 +1,7 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_strcat.s                                        :+:      :+:    :+:    ;
+;    ft_puts.s                                          :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
@@ -10,28 +10,39 @@
 ;                                                                              ;
 ; **************************************************************************** ;
 
-global _ft_strcat
+global _ft_puts
 
 section .text
 
-_ft_strcat:
-	mov rax, rdi
+msg db '(null)', 10
+bsn db 10, 10
 
-pass_rdi:
+_ft_puts:
+	cmp rdi, 0
+	je null_case
+	mov rsi, rdi
+	mov rdx, 0
+
+calc_length:
 	cmp byte[rdi], 0
-	je append
-	add rdi, 1
-	jmp pass_rdi
+	je print
+	inc rdi
+	inc rdx
+	jmp calc_length
 
-append:
-	cmp byte[rsi], 0
-	je end_prog
-	mov al, byte[rsi]
-	mov byte[rdi], al
-	add rdi, 1
-	add rsi, 1
-	jmp append
+null_case:
+	mov rsi, msg
+	mov rdx, 6
 
-end_prog:
-	mov byte[rdi], 0
+print:
+	mov rax, 0x2000004
+	mov rdi, 1
+	syscall
+	mov rax, 0x2000004
+	mov rdx, 1
+	mov rsi, bsn
+	syscall
+
+end:
+	mov rax, 1
 	ret
