@@ -1,7 +1,7 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_strdup.s                                        :+:      :+:    :+:    ;
+;    ft_cat.s                                           :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
@@ -10,29 +10,22 @@
 ;                                                                              ;
 ; **************************************************************************** ;
 
-global _ft_strdup
+global _ft_cat
 
 extern _malloc
-extern _ft_strlen
-extern _ft_memcpy
+extern _write
 
 section .text
 
-_ft_strdup:
-	cmp rdi, 0
-	je nullcase
-	push rdi
-	call _ft_strlen
-	push rax
-	mov rdi, rax
+_ft_cat:
+	mov rdi, 10
 	call _malloc
-	cmp rax, 0
-	je nullcase
-	pop rdx
-	pop rsi
-	mov rdi, rax
-	call _ft_memcpy
-	ret
+	push rdi
+	mov rax, 0x2000003
+	mov rdi, 
+	mov rdi, 1
+	mov rsi, 
+
 
 nullcase:
 	mov rax, 0

@@ -6,7 +6,7 @@
 #    By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 06:50:12 by acazuc            #+#    #+#              #
-#    Updated: 2016/03/21 10:29:00 by acazuc           ###   ########.fr        #
+#    Updated: 2016/03/21 11:37:04 by acazuc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS_NAME = ft_bzero.s \
 			ft_memset.s \
 			ft_strlen.s \
 			ft_strdup.s \
+			ft_cat.s \
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 
