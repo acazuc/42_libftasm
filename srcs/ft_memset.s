@@ -15,13 +15,14 @@ global _ft_memset
 section .text
 
 _ft_memset:
+	mov r11, rdi
 	cmp rdi, 0
 	je nullcase
 	mov rcx, rdx
-	mov ax, [rsi]
+	mov rax, rsi
 	cld
 	rep stosb
 
 nullcase:
-	mov rax, rdi
+	mov rax, r11
 	ret
