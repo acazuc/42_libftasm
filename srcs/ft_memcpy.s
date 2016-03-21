@@ -15,4 +15,16 @@ global _ft_memcpy
 section .text
 
 _ft_memcpy:
+	mov rax, rdi
+	cmp rdi, 0
+	je nullcase
+	cmp rsi, 0
+	je nullcase
+	mov rcx, rdx
+	cld
+	rep movsb
+	ret
+
+nullcase:
+	mov rax, 0
 	ret
