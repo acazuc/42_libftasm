@@ -13,12 +13,11 @@
 global _ft_cat
 
 extern _malloc
+extern _free
 
-%define BUFF_SIZE 1000
+%define BUFF_SIZE 10
 
 section .text
-
-; r10 = fd, r11 = buff, r9 = readed size
 
 _ft_cat:
 	mov r10, rdi
@@ -35,6 +34,18 @@ loop:
 	mov rdi, r10
 	mov rsi, r11
 	mov rdx, BUFF_SIZE
+	push r10
+	push r11
+	syscall
+	pop r11
+	pop r10
+	cmp rax, 0
+	jbe nullcase
+	mov r9, rax
+	mov rax, 0x2000004
+	mov rdi, 1
+	mov rsi, r11
+	mov rdx, r9
 	push r9
 	push r10
 	push r11
@@ -42,16 +53,12 @@ loop:
 	pop r11
 	pop r10
 	pop r9
-	cmp rax, 0
-	je nullcase
-	mov r9, rax
-	mov rax, 0x2000004
-	mov rdi, 1
-	mov rsi, r11
-	mov rdx, r9
-	syscall
 	cmp r9, BUFF_SIZE
 	je loop
+
+ended:
+	mov rdi, r11
+	call _free
 
 nullcase:
 	mov rax, 0
