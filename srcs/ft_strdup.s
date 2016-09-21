@@ -23,16 +23,25 @@ _ft_strdup:
 	je nullcase
 	push rdi
 	call _ft_strlen
-	push rax
+	inc rax
 	mov rdi, rax
+	push rax
+	push rax
 	call _malloc
 	cmp rax, 0
-	je nullcase
+	je popcase
+	mov rdi, rax
+	pop r11
 	pop rdx
 	pop rsi
-	mov rdi, rax
 	call _ft_memcpy
 	ret
+
+popcase:
+	pop rax
+	pop rdi
+	pop rdi
+	mov rax, 1
 
 nullcase:
 	mov rax, 0

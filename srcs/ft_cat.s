@@ -15,7 +15,7 @@ global _ft_cat
 extern _malloc
 extern _free
 
-%define BUFF_SIZE 10
+%define BUFF_SIZE 1
 
 section .text
 
@@ -40,7 +40,7 @@ loop:
 	pop r11
 	pop r10
 	cmp rax, 0
-	jbe nullcase
+	jbe ended
 	mov r9, rax
 	mov rax, 0x2000004
 	mov rdi, 1

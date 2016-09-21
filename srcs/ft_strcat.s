@@ -15,12 +15,12 @@ global _ft_strcat
 section .text
 
 _ft_strcat:
-	mov rax, rdi
+	mov r11, rdi
 
 pass_rdi:
 	cmp byte[rdi], 0
 	je append
-	add rdi, 1
+	inc rdi
 	jmp pass_rdi
 
 append:
@@ -28,10 +28,11 @@ append:
 	je end_prog
 	mov al, byte[rsi]
 	mov byte[rdi], al
-	add rdi, 1
-	add rsi, 1
+	inc rdi
+	inc rsi
 	jmp append
 
 end_prog:
 	mov byte[rdi], 0
+	mov rax, r11
 	ret
