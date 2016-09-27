@@ -12,10 +12,12 @@
 
 global _ft_puts
 
-section .text
+section .data
 
-msg db '(null)', 10
-bsn db 10, 10
+LF: db 10
+NULL_STR: db "(null)"
+
+section .text
 
 _ft_puts:
 	cmp rdi, 0
@@ -31,7 +33,7 @@ calc_length:
 	jmp calc_length
 
 null_case:
-	mov rsi, msg
+	mov rsi, NULL_STR
 	mov rdx, 6
 
 print:
@@ -40,8 +42,11 @@ print:
 	syscall
 	mov rax, 0x2000004
 	mov rdx, 1
-	mov rsi, bsn
+	mov rsi, LF
 	syscall
+	cmp rax, -1
+	jne end
+	ret
 
 end:
 	mov rax, 1
