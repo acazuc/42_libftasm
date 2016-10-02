@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/21 12:58:12 by acazuc            #+#    #+#             */
-/*   Updated: 2016/10/02 14:25:48 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/10/02 14:53:31 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,13 @@ int		main(void)
 	ft_putchar('\n');
 	ft_putnbr(ft_isdigit('0'));
 	ft_putnbr(ft_isdigit('a'));
+	ft_putchar('\n');
+	ft_putnbr(ft_isspace(' '));
+	ft_putnbr(ft_isspace('a'));
+	ft_putchar('\n');
+	ft_putnbr(ft_swap_int(0x10000000));
+	ft_putchar('\n');
+	ft_putnbr(ft_swap_long(0x1000000000000000));
 	ft_putchar('\n');
 	test2();
 }
