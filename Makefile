@@ -6,7 +6,7 @@
 #    By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 06:50:12 by acazuc            #+#    #+#              #
-#    Updated: 2016/10/02 13:53:58 by acazuc           ###   ########.fr        #
+#    Updated: 2016/10/02 14:35:35 by acazuc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,7 @@ ASMC = ~/.brew/bin/nasm
 
 ASMFLAGS = -f macho64
 
-INCLUDES_PATH = includes/
-
-SRCS_PATH = srcs/
+SRCS_PATH = src/
 
 SRCS_NAME = ft_bzero.s \
 			ft_strcat.s \
@@ -44,7 +42,7 @@ SRCS_NAME = ft_bzero.s \
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 
-OBJS_PATH = objs/
+OBJS_PATH = obj/
 
 OBJS_NAME = $(SRCS_NAME:.s=.o)
 
@@ -59,7 +57,7 @@ $(NAME): $(OBJS)
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.s
 	@echo " - Compiling $<"
-	@$(ASMC) $(ASMFLAGS) -o $@ $< -I$(INCLUDES_PATH)
+	@$(ASMC) $(ASMFLAGS) -o $@ $<
 
 odir:
 	@mkdir -p $(OBJS_PATH)
