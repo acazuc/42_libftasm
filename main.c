@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/21 12:58:12 by acazuc            #+#    #+#             */
-/*   Updated: 2016/10/02 15:25:22 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/10/02 15:31:46 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	test2()
 	ft_putchar('\n');
 	ft_putnbr(ft_strnequ("lol", "lo"));
 	ft_putnbr(ft_strnequ("lol", "lol"));
+	ft_putchar('\n');
+	ft_memdel(malloc(10));
 	ft_putchar('\n');
 	ft_memcpy(a, "123456789", 10);
 	ft_putstr(a);
