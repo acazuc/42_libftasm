@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/21 12:58:12 by acazuc            #+#    #+#             */
-/*   Updated: 2016/09/27 15:09:23 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/10/02 14:25:48 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	test2()
 	ft_putchar('\n');
 	ft_putendl("test");
 	ft_putendl_fd("test", 2);
+	ft_putendl(NULL);
 	ft_puts("test");
 	ft_puts(NULL);
 	ft_putstr("test");
@@ -79,7 +80,7 @@ int		main(void)
 	ft_cat(a);
 	close(a);
 	ft_putnbr(ft_isalnum('1'));
-	ft_putnbr(ft_isalnum(256));
+	ft_putnbr(ft_isalnum('\n'));
 	ft_putchar('\n');
 	ft_putnbr(ft_isalpha('a'));
 	ft_putnbr(ft_isalpha('1'));

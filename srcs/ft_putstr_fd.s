@@ -14,6 +14,10 @@ global _ft_putstr_fd
 
 extern _ft_strlen
 
+section .data
+
+NULL_STR db "(null)"
+
 section .text
 
 _ft_putstr_fd:
@@ -27,6 +31,12 @@ _ft_putstr_fd:
 	pop rdi
 	pop rsi
 	syscall
+	ret
 
 nullcase:
+	mov rdi, rsi
+	lea rsi, [rel NULL_STR]
+	mov rdx, 6
+	mov rax, 0x2000004
+	syscall
 	ret

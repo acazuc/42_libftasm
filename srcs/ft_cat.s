@@ -29,7 +29,7 @@ _ft_cat:
 loop:
 	mov rax, 0x2000003
 	mov rdi, r10
-	mov rsi, BUFF
+	lea rsi, [rel BUFF]
 	mov rdx, BUFF_SIZE
 	push r10
 	syscall
@@ -39,7 +39,7 @@ loop:
 	mov r9, rax
 	mov rax, 0x2000004
 	mov rdi, 1
-	mov rsi, BUFF
+	lea rsi, [rel BUFF]
 	mov rdx, r9
 	push r9
 	push r10

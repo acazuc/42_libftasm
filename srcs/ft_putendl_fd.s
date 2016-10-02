@@ -18,13 +18,9 @@ extern _ft_putchar_fd
 section .text
 
 _ft_putendl_fd:
-	cmp rdi, 0
-	je nullcase
 	push rsi
 	call _ft_putstr_fd
 	pop rsi
 	mov rdi, 10
 	call _ft_putchar_fd
-
-nullcase:
 	ret

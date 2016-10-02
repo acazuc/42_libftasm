@@ -14,8 +14,8 @@ global _ft_puts
 
 section .data
 
-LF: db 10
-NULL_STR: db "(null)"
+LF db 10
+NULL_STR db "(null)"
 
 section .text
 
@@ -33,7 +33,7 @@ calc_length:
 	jmp calc_length
 
 null_case:
-	mov rsi, NULL_STR
+	lea rsi, [rel NULL_STR]
 	mov rdx, 6
 
 print:
@@ -42,7 +42,7 @@ print:
 	syscall
 	mov rax, 0x2000004
 	mov rdx, 1
-	mov rsi, LF
+	lea rsi, [rel LF]
 	syscall
 	cmp rax, -1
 	jne end
