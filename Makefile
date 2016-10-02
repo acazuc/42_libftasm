@@ -6,7 +6,7 @@
 #    By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/25 06:50:12 by acazuc            #+#    #+#              #
-#    Updated: 2016/10/02 14:47:11 by acazuc           ###   ########.fr        #
+#    Updated: 2016/10/02 15:12:00 by acazuc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRCS_NAME = ft_bzero.s \
 			ft_isspace.s \
 			ft_swap_int.s \
 			ft_swap_long.s \
+			ft_strcmp.s \
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 

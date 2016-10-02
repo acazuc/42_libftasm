@@ -6,7 +6,7 @@
 /*   By: acazuc <acazuc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 12:25:31 by acazuc            #+#    #+#             */
-/*   Updated: 2016/10/02 14:51:54 by acazuc           ###   ########.fr       */
+/*   Updated: 2016/10/02 15:13:42 by acazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_swap_int(int i);
 long	ft_swap_long(long l);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif
