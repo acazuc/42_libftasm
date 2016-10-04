@@ -21,6 +21,12 @@ _ft_isspace:
 	je yep
 	cmp rdi, 9
 	je yep
+	cmp rdi, 11
+	je yep
+	cmp rdi, 12
+	je yep
+	cmp rdi, 13
+	je yep
 	mov rax, 0
 	ret
 
