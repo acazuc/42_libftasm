@@ -44,8 +44,13 @@ print:
 	mov rdx, 1
 	lea rsi, [rel LF]
 	syscall
+	jc fail
 	cmp rax, -1
 	jne end
+	ret
+
+fail:
+	mov rax, -1
 	ret
 
 end:
