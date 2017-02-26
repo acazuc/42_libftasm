@@ -16,4 +16,5 @@ section .text
 
 _ft_swap_long:
 	bswap rdi
+	mov rax, rdi
 	ret

@@ -16,4 +16,6 @@ section .text
 
 _ft_swap_int:
 	bswap edi
+	mov rax, 0
+	mov eax, edi
 	ret
